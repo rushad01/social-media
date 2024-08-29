@@ -20,6 +20,7 @@ app.use(express.urlencoded({
 }))
 app.disable('x-powered-by');
 app.use(cors());
+app.use(express.static("public"));
 
 //Route imports
 const router = require("./routes/index");

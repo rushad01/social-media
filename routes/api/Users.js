@@ -21,7 +21,7 @@ function generateAccessToken(user) {
 }
 
 /**
- * @route   POST /users
+ * @route   POST /users/registration
  * @desc    Register new user
  * @access  Public
  */
