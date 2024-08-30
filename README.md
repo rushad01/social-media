@@ -24,6 +24,8 @@ Social Media API  web applications built with:
 - Add / Update / Delete Profile Image
 - Add / Update / Delete comments from Post
 
+[Full API Doc](https://github.com/rushad01/social-media/blob/main/routes/README.md)
+
 ## Getting Started
 
 clone the repository

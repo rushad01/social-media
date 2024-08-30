@@ -5,6 +5,7 @@ const authenticationToken = require("../../middlewares/auth");
 const multer = require("multer");
 const path = require("path");
 const fs = require("fs/promises");
+const { where } = require("sequelize");
 
 const rootDir = path.join(__dirname, "../..");
 
@@ -72,5 +73,27 @@ router.post(
     res.status(200).json({ message: "Successfully uploaded." });
   }
 );
+
+
+/**
+ * @route   GET /avatar
+ * @desc    Current profile pic of the user
+ * @access  Public
+ */
+router.get("/avatar",async(req,res) =>{
+  const id = req.body.id;
+  const avatar = await ProfileImage.findOne({
+    where:{
+      userId:id
+    },
+    attributes:{exclude:['createdAt','updatedAt']}
+  });
+  if(avatar === null){
+    return res.status(200).json({message:"You have no profile image"});
+  }
+
+  const filepath = `http://${req.headers.host}/uploads/${avatar.image_name}`;
+  return res.status(200).json({image_path:filepath});
+})
 
 module.exports = router;
