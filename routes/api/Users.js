@@ -65,7 +65,7 @@ router.post(
         email: userId.email,
       };
       const token = generateAccessToken(tokenData);
-      return res.status(201).json({ token });
+      return res.status(202).json({ token });
   }
 );
 
@@ -83,10 +83,10 @@ router.get("/:id", async (req, res, next) => {
     attributes: { exclude: ["password"] },
   });
   if (user === null) {
-    res.status(401).json({ error: "User does not exist." });
+    res.status(404).json({ error: "User does not exist." });
     next();
   } else {
-    res.status(201).json(user);
+    res.status(202).json(user);
     next();
   }
 });
