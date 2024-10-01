@@ -1,0 +1,17 @@
+meta {
+  name: post-create
+  type: http
+  seq: 5
+}
+
+post {
+  url: http://localhost:8000/api/posts/post
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "content":"This is a test content. Everything is working fine."
+  }
+}

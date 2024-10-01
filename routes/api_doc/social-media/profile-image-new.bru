@@ -1,0 +1,15 @@
+meta {
+  name: profile-image-new
+  type: http
+  seq: 10
+}
+
+post {
+  url: http://localhost:8000/api/profile-image/new
+  body: multipartForm
+  auth: inherit
+}
+
+body:multipart-form {
+  profile_img: @file(C:\Users\Rushad\Pictures\Chip8-output.PNG)
+}

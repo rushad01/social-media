@@ -1,0 +1,16 @@
+meta {
+  name: post-all_offset-limit
+  type: http
+  seq: 7
+}
+
+get {
+  url: http://localhost:8000/api/posts/?offset=0&limit=10
+  body: none
+  auth: none
+}
+
+params:query {
+  offset: 0
+  limit: 10
+}

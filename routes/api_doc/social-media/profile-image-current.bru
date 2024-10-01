@@ -1,0 +1,17 @@
+meta {
+  name: profile-image-current
+  type: http
+  seq: 11
+}
+
+get {
+  url: http://localhost:8000/api/profile-image/avatar
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "id":3
+  }
+}

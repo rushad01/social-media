@@ -1,0 +1,18 @@
+meta {
+  name: post-edit
+  type: http
+  seq: 8
+}
+
+post {
+  url: http://localhost:8000/api/posts/4
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "content":"This is a edited post from a authenticated user",
+    "id":4
+  }
+}

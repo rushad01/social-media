@@ -1,0 +1,306 @@
+{
+  "name": "social-media",
+  "version": "1",
+  "items": [
+    {
+      "type": "http",
+      "name": "post-all_offset&limit",
+      "seq": 7,
+      "request": {
+        "url": "http://localhost:8000/api/posts/?offset=0&limit=10",
+        "method": "GET",
+        "headers": [],
+        "params": [
+          {
+            "name": "offset",
+            "value": "0",
+            "type": "query",
+            "enabled": true
+          },
+          {
+            "name": "limit",
+            "value": "10",
+            "type": "query",
+            "enabled": true
+          }
+        ],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "post-create",
+      "seq": 5,
+      "request": {
+        "url": "http://localhost:8000/api/posts/post",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"content\":\"This is a test content. Everything is working fine.\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "post-delete",
+      "seq": 9,
+      "request": {
+        "url": "http://localhost:8000/api/posts/2",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "post-details",
+      "seq": 6,
+      "request": {
+        "url": "http://localhost:8000/api/posts/5",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "post-edit",
+      "seq": 8,
+      "request": {
+        "url": "http://localhost:8000/api/posts/4",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"content\":\"This is a edited post from a authenticated user\",\n  \"id\":4\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "profile-image-current",
+      "seq": 11,
+      "request": {
+        "url": "http://localhost:8000/api/profile-image/avatar",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"id\":3\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "profile-image-delete",
+      "seq": 12,
+      "request": {
+        "url": "http://localhost:8000/api/profile-image/1",
+        "method": "DELETE",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "profile-image-new",
+      "seq": 10,
+      "request": {
+        "url": "http://localhost:8000/api/profile-image/new",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "multipartForm",
+          "formUrlEncoded": [],
+          "multipartForm": [
+            {
+              "type": "file",
+              "name": "profile_img",
+              "value": [
+                "C:\\Users\\Rushad\\Pictures\\Chip8-output.PNG"
+              ],
+              "enabled": true
+            }
+          ]
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "user-details",
+      "seq": 3,
+      "request": {
+        "url": "http://localhost:8000/api/users/2",
+        "method": "GET",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "none",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "inherit"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "user-login",
+      "seq": 4,
+      "request": {
+        "url": "http://localhost:8000/api/users/login",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"email\":\"faruk@gmail.com\",\n  \"password\":\"12345678\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    },
+    {
+      "type": "http",
+      "name": "user-registration",
+      "seq": 2,
+      "request": {
+        "url": "localhost:8000/api/users/registration",
+        "method": "POST",
+        "headers": [],
+        "params": [],
+        "body": {
+          "mode": "json",
+          "json": "{\n  \"first_name\":\"Sabbir\",\n  \"last_name\":\"Khan\",\n  \"email\":\"sabbir1@gmail.com\",\n  \"password\":\"12345678\"\n}",
+          "formUrlEncoded": [],
+          "multipartForm": []
+        },
+        "script": {},
+        "vars": {},
+        "assertions": [],
+        "tests": "",
+        "auth": {
+          "mode": "none"
+        }
+      }
+    }
+  ],
+  "environments": [],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "bearer",
+        "bearer": {
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjozLCJlbWFpbCI6ImZhcnVrQGdtYWlsLmNvbSJ9LCJpYXQiOjE3MjQ5NTE1MzksImV4cCI6MTcyNTIxMDczOX0.oc3jDtMlT5KLkfMlGBR93rxGyumdMlaXuMh5ZxeflVk"
+        }
+      }
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "social-media",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}

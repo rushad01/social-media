@@ -1,0 +1,17 @@
+meta {
+  name: comment-create
+  type: http
+  seq: 13
+}
+
+post {
+  url: http://localhost:8000/api/comments/comment
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "content":""
+  }
+}
